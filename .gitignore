@@ -1,0 +1,19 @@
+# Generated data — recreate with: python data/generate_logs.py
+data/raw/
+
+# SQLite database — recreate by running the detector
+db/
+
+# Environment variables — never commit secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
