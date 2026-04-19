@@ -1,0 +1,402 @@
+[
+    {
+        "@timestamp": "2026-04-19 15:28:02.019",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8587071165351329019\",\"trace_id\":\"6105578163009580928\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:28:01.588",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8712846218291142325\",\"trace_id\":\"5000273676759654922\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:28:01.213",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2809779815918903689\",\"trace_id\":\"6211849973749058933\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:27:12.954",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8722477033693624814\",\"trace_id\":\"6107981961832080545\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:27:12.536",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"890920081558913638\",\"trace_id\":\"46370672150456602\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:27:12.174",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5639670533918411407\",\"trace_id\":\"4220230745286806112\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:27:05.942",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3326072678094672774\",\"trace_id\":\"6406452958708226634\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:27:05.541",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5686086583814893644\",\"trace_id\":\"7404988849289879738\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:27:05.165",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6532705184578142145\",\"trace_id\":\"880982218545943413\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:58.945",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4822171601874932408\",\"trace_id\":\"2743661225227153382\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:58.526",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7387107974235282063\",\"trace_id\":\"6721337372518905953\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:58.160",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2376944209373963823\",\"trace_id\":\"1391048133801875570\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:51.931",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8262209045112047262\",\"trace_id\":\"4075029040451555047\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:51.525",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3131024384638446916\",\"trace_id\":\"6260716979033567968\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:51.162",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2265779479382617573\",\"trace_id\":\"4924404503170234226\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:44.928",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7009786550065755266\",\"trace_id\":\"4473485837718326577\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:44.515",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8675834603770629958\",\"trace_id\":\"5639532854703910992\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:44.153",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3289600106704518637\",\"trace_id\":\"4804475193384417336\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:37.910",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3967464485355548115\",\"trace_id\":\"8319403562080587327\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:37.516",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"405137003370858000\",\"trace_id\":\"4936102068672251455\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:37.150",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7966648627002851074\",\"trace_id\":\"3382646198463108632\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:30.912",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"9044468384125717264\",\"trace_id\":\"2498671687461260835\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:30.507",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7676749798395742776\",\"trace_id\":\"4436394697172588189\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:30.137",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3719223673603896927\",\"trace_id\":\"3626528757131529904\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:23.912",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2127388451246962805\",\"trace_id\":\"6843605006307656776\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:23.504",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6390355325404504829\",\"trace_id\":\"7076494572964595738\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:23.134",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"323073787851083937\",\"trace_id\":\"2470096785696165309\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:16.910",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6519705512827570042\",\"trace_id\":\"2194146872224184024\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:16.497",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"9168446622645183177\",\"trace_id\":\"473133942865892974\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:16.136",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"1031265649813967155\",\"trace_id\":\"953706578364641606\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:09.895",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6452064070216086526\",\"trace_id\":\"7795647398274502224\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:09.495",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6723724089646850558\",\"trace_id\":\"3484036197983525265\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:09.129",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7370140513986669790\",\"trace_id\":\"897068224857732736\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:02.891",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"9207635072645591646\",\"trace_id\":\"4757094737667093083\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:02.490",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6124845924501836631\",\"trace_id\":\"5428281785994302151\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:26:02.134",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2260829677324768943\",\"trace_id\":\"8540148867589363467\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:55.887",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8350895128623386586\",\"trace_id\":\"1851506136373854076\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:55.481",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7938258008798400654\",\"trace_id\":\"4177635915134177399\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:55.119",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7497640090665759167\",\"trace_id\":\"2740511430937536963\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:48.884",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"1796304040558755829\",\"trace_id\":\"7563131920136225793\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:48.474",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7285097907039882593\",\"trace_id\":\"3918571016695521344\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:48.114",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4322864222009060443\",\"trace_id\":\"7874329529383776397\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:41.880",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"397424850335511865\",\"trace_id\":\"4752188872230183518\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:41.468",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7127922111668928627\",\"trace_id\":\"7222564907832827050\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:41.112",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7946401303349072083\",\"trace_id\":\"4717897192855294129\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:34.871",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7146301926827453175\",\"trace_id\":\"9205049113066381127\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:34.457",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"460603017217692901\",\"trace_id\":\"2421781661120998280\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:34.106",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"9109624133806693249\",\"trace_id\":\"1295113295541598261\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:27.871",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7897355980764028159\",\"trace_id\":\"4015483928409551270\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:27.455",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8374221356290071063\",\"trace_id\":\"4807199585545283609\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:27.096",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5675219400615866129\",\"trace_id\":\"7670781993997453311\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:20.859",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7321116089806589806\",\"trace_id\":\"5944977997191563649\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:20.453",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8671175646718876621\",\"trace_id\":\"5810444310395580276\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:20.095",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2953792021554998778\",\"trace_id\":\"9160166906829191717\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:13.855",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6789939841365206406\",\"trace_id\":\"3542879484372350934\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:13.446",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"819123734998705425\",\"trace_id\":\"4077736157385503800\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:13.085",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4481498374482268043\",\"trace_id\":\"4492079080228988384\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:06.855",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2014020916546600517\",\"trace_id\":\"2888418448655652412\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:06.436",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5253195180210022677\",\"trace_id\":\"5153709196967114818\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:25:06.076",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6580693610311381460\",\"trace_id\":\"1791054229539480461\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:59.853",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5096186659469306230\",\"trace_id\":\"3031554242971794920\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:59.429",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"1104214552663967585\",\"trace_id\":\"3871667025392018169\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:59.081",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8453346245624029113\",\"trace_id\":\"4774272220121311622\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:52.838",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2531971370967329614\",\"trace_id\":\"5722813499949377880\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:52.427",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8080716189880130792\",\"trace_id\":\"1919415372705585197\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:52.084",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3088636197431889882\",\"trace_id\":\"4074719173075625376\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:45.834",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"1352224681795652794\",\"trace_id\":\"1306030394489166867\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:45.415",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5649253148622176460\",\"trace_id\":\"4192123270144259807\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:45.068",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4506822245659790810\",\"trace_id\":\"5323289283798752233\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:38.836",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8430094052030239146\",\"trace_id\":\"6527893681247346675\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:38.413",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3860019737566347707\",\"trace_id\":\"7260467588578959341\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:38.069",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3742945564636874597\",\"trace_id\":\"7078816776576383101\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:31.829",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8191845631762633505\",\"trace_id\":\"7369267375729313854\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:31.404",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8512898342675566169\",\"trace_id\":\"8980452709091784684\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:31.060",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7991785011891467283\",\"trace_id\":\"899408284661678418\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:24.825",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6227814332805176863\",\"trace_id\":\"74353768765024967\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:24.401",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4002935960169793562\",\"trace_id\":\"5810260105758245105\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:24.062",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8992568002105298429\",\"trace_id\":\"304737856492882391\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:17.822",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"1673923722888298496\",\"trace_id\":\"8871834675907522788\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:17.394",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7730618969355299755\",\"trace_id\":\"1521981856628743213\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:17.056",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4640866728472441375\",\"trace_id\":\"211781320124646642\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:10.810",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5338993932852349996\",\"trace_id\":\"8477353422689517580\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:10.384",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"639932514996564566\",\"trace_id\":\"4145609641162920486\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:10.054",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7627915767014473858\",\"trace_id\":\"1354538908460142246\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:03.816",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8545386524072949521\",\"trace_id\":\"8591464852923486264\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:03.392",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4846747282704128441\",\"trace_id\":\"8086223100367998579\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:24:03.058",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"3899149020830867354\",\"trace_id\":\"3926420415594308908\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:56.810",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8977106844825842388\",\"trace_id\":\"7726877737381662588\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:56.378",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"1025281250594776877\",\"trace_id\":\"452742351233018972\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:56.046",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7811871758246124542\",\"trace_id\":\"4346510471820830284\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:49.805",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7936354825938725076\",\"trace_id\":\"833149645051712431\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:49.373",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2273845239118642146\",\"trace_id\":\"2153882950158610244\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:49.035",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"6970140153914137744\",\"trace_id\":\"4872733774753773526\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:42.802",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"2769201496854420175\",\"trace_id\":\"6059396621088240522\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:42.367",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"1057999387619731703\",\"trace_id\":\"9210198517765937680\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:42.028",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8838760619516546274\",\"trace_id\":\"7237843031056005289\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:35.792",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"4091638417543655274\",\"trace_id\":\"2143078994737026267\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:35.354",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"5341446081039022847\",\"trace_id\":\"534932257967133475\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:35.028",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"8970250623453205822\",\"trace_id\":\"6698499974688662695\",\"version\":\"token-ms\"}}"
+    },
+    {
+        "@timestamp": "2026-04-19 15:23:28.780",
+        "@message": "\u001b[32minfo\u001b[39m: [Start Request] GET /csm/v1/token-generation/health {\"dd\":{\"env\":\"dev\",\"service\":\"dev-external-token-ms-service\",\"span_id\":\"7061236020606069530\",\"trace_id\":\"6097399114101529936\",\"version\":\"token-ms\"}}"
+    }
+]
