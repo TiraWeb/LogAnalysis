@@ -1,4 +1,4 @@
-# Generated data — recreate with: python data/generate_logs.py
+# Real CloudWatch log exports — not committed (see README)
 data/raw/
 
 # SQLite database — recreate by running the detector
@@ -13,6 +13,10 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+
+# Build artifacts
+design.html
+build_html.py
 
 # OS
 .DS_Store

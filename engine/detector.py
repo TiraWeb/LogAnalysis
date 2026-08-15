@@ -29,6 +29,7 @@ import requests
 from dotenv import load_dotenv
 
 from models import get_db, init_db
+from notifications import notify_incident
 
 load_dotenv(Path(__file__).parent.parent / '.env')
 
@@ -37,12 +38,17 @@ OZ_USER   = os.getenv('OPENOBSERVE_USER',   'admin@velaris.local')
 OZ_PASS   = os.getenv('OPENOBSERVE_PASS',   'Admin1234!')
 OZ_ORG    = os.getenv('OPENOBSERVE_ORG',    'default')
 OZ_STREAM = os.getenv('OPENOBSERVE_STREAM', 'velaris_logs')
-DB_PATH   = os.getenv('DB_PATH',            str(Path(__file__).parent.parent / 'db' / 'incidents.db'))
+_db_raw   = os.getenv('DB_PATH', '')
+DB_PATH   = str(
+    (Path(__file__).parent.parent / _db_raw) if _db_raw and not Path(_db_raw).is_absolute()
+    else Path(_db_raw) if _db_raw
+    else Path(__file__).parent.parent / 'db' / 'incidents.db'
+)
 
 Z_THRESHOLD      = 3.0    # standard deviations above mean → anomaly
 WINDOW_MINUTES   = 5      # analysis window size
 BASELINE_DAYS    = 30     # how many days of history to use for baseline
-MIN_BASELINE_OBS = 5      # skip baseline if fewer data points than this
+MIN_BASELINE_OBS = 3      # skip baseline if fewer data points than this
 
 
 # ---------------------------------------------------------------------------
@@ -147,17 +153,17 @@ def query_current_window(window_end: datetime) -> list[dict]:
 
 def query_baseline(window_end: datetime) -> dict[str, dict]:
     """
-    Return per-service baseline stats using the same hour-of-day
-    across the last BASELINE_DAYS days.
+    Return per-service baseline stats using all hourly buckets across
+    the available history window.  With only 7 days of real data the
+    same-hour-of-day filter would leave < MIN_BASELINE_OBS data points
+    per service, so we use the full rolling window instead.
 
     Returns: {service: {mean_error_rate, std_error_rate, mean_duration, std_duration}}
     """
     baseline_end   = window_end - timedelta(minutes=WINDOW_MINUTES)
     baseline_start = window_end - timedelta(days=BASELINE_DAYS)
-    # Derive target hour in UTC so it matches the UTC bucket timestamps from OpenObserve
-    target_hour = datetime.fromtimestamp(window_end.timestamp(), tz=timezone.utc).hour
 
-    # Get hourly aggregates over the baseline period
+    # Hourly aggregates over the full baseline period (no hour-of-day filter)
     sql = f"""
         SELECT
             service,
@@ -173,27 +179,13 @@ def query_baseline(window_end: datetime) -> dict[str, dict]:
 
     rows = oz_query(sql, dt_to_us(baseline_start), dt_to_us(baseline_end), size=50_000)
 
-    # Group into per-(service, hour-of-day) buckets
+    # Accumulate all hourly buckets per service
     buckets: dict[str, list[dict]] = {}
     for row in rows:
         svc   = row.get('service') or ''
         total = int(row.get('total') or 0)
         if total == 0 or not svc:
             continue
-
-        # Parse bucket timestamp — OpenObserve returns microseconds int or ISO string
-        bucket_raw = row.get('hour_bucket')
-        try:
-            bucket_us  = int(bucket_raw)
-            bucket_dt  = datetime.fromtimestamp(bucket_us / 1_000_000, tz=timezone.utc)
-        except (TypeError, ValueError):
-            try:
-                bucket_dt = datetime.fromisoformat(str(bucket_raw).replace('Z', '+00:00'))
-            except ValueError:
-                continue
-
-        if bucket_dt.hour != target_hour:
-            continue  # only same hour-of-day
 
         errs  = int(row.get('errors') or 0)
         buckets.setdefault(svc, []).append({
@@ -229,8 +221,61 @@ def compute_z(value: float, mu: float, sigma: float) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Step 4 — Match diagnosis rules
+# Step 4 — Match diagnosis rules (with optional metric condition)
 # ---------------------------------------------------------------------------
+
+def get_recent_metric(
+    db: sqlite3.Connection,
+    service: str,
+    metric_name: str,
+    at_time: datetime | None = None,
+) -> float | None:
+    """
+    Return the most recent metric value for (service, metric_name) within
+    60 minutes before at_time (default: now).
+
+    For RDS connections the service key is 'rds_main' regardless of the
+    triggering log service.
+    """
+    ref    = at_time or datetime.now()
+    cutoff = (ref - timedelta(minutes=60)).isoformat()
+    upper  = ref.isoformat()
+
+    lookup_service = 'rds_main' if metric_name == 'rds_connections' else service
+
+    row = db.execute(
+        """SELECT value FROM metrics
+           WHERE service = ? AND metric_name = ? AND timestamp >= ? AND timestamp <= ?
+           ORDER BY timestamp DESC LIMIT 1""",
+        (lookup_service, metric_name, cutoff, upper),
+    ).fetchone()
+    return float(row[0]) if row else None
+
+
+def _metric_condition_met(
+    db: sqlite3.Connection,
+    service: str,
+    rule: sqlite3.Row,
+    at_time: datetime | None = None,
+) -> bool:
+    """Return True if the rule has no metric condition, or the condition is satisfied."""
+    metric_name = rule['metric_name']
+    if not metric_name:
+        return True
+
+    operator  = rule['metric_operator']  or '>'
+    threshold = rule['metric_threshold']
+    if threshold is None:
+        return True
+
+    value = get_recent_metric(db, service, metric_name, at_time)
+    if value is None:
+        return False  # metric data absent — don't fire the metric-specific rule
+
+    ops = {'>': value > threshold, '>=': value >= threshold,
+           '<': value < threshold, '<=': value <= threshold, '=': value == threshold}
+    return ops.get(operator, False)
+
 
 def match_rule(
     db: sqlite3.Connection,
@@ -239,10 +284,12 @@ def match_rule(
     z_errors: float,
     z_latency: float,
     sample_errors: list[str],
+    at_time: datetime | None = None,
 ) -> sqlite3.Row | None:
     """
     Find the most specific enabled rule that matches this anomaly.
     Service-specific rules take priority over catch-all rules.
+    Rules with metric conditions are tried before those without (more specific).
     """
     z_max = max(z_errors, z_latency)
 
@@ -254,6 +301,7 @@ def match_rule(
              AND (check_latency = 0 OR ? > 0)
            ORDER BY
                CASE WHEN service IS NOT NULL THEN 0 ELSE 1 END,
+               CASE WHEN metric_name IS NOT NULL THEN 0 ELSE 1 END,
                min_z_score DESC""",
         (z_max, z_errors, z_latency),
     ).fetchall()
@@ -274,6 +322,10 @@ def match_rule(
         if rule['check_errors'] and 'error' not in anomaly_type and 'both' not in anomaly_type:
             continue
         if rule['check_latency'] and 'latency' not in anomaly_type and 'both' not in anomaly_type:
+            continue
+
+        # Metric condition
+        if not _metric_condition_met(db, service, rule, at_time):
             continue
 
         return rule  # first (most specific) match wins
@@ -300,13 +352,14 @@ def record_incident(
     window_start = window_end - timedelta(minutes=WINDOW_MINUTES)
     cur = db.execute(
         """INSERT INTO incidents
-               (service, window_start, window_end,
+               (detected_at, service, window_start, window_end,
                 error_rate, mean_duration_ms,
                 z_score_errors, z_score_latency, anomaly_type,
                 sample_errors,
                 diagnosis_rule_id, diagnosis_label, playbook)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
         (
+            datetime.utcnow().isoformat(),  # when the analysis ran (not the historical window)
             service,
             window_start.isoformat(),
             window_end.isoformat(),
@@ -329,9 +382,16 @@ def record_incident(
 # Main detection loop
 # ---------------------------------------------------------------------------
 
-def run_detection(at_time: datetime | None = None) -> list[dict]:
+def run_detection(
+    at_time: datetime | None = None,
+    cached_baseline: dict | None = None,
+    notify: bool = True,
+) -> list[dict]:
     """
     Run one detection pass at the given time (default: now).
+    cached_baseline: pre-fetched baseline dict (used by replay to avoid redundant OZ queries).
+    notify: fire real alert_channels notifications for each incident found (disabled during
+    historical --replay-hours backfills so they don't flood Slack/Discord with old incidents).
     Returns a list of incident summaries for the caller.
     """
     window_end = at_time or datetime.now()
@@ -342,7 +402,7 @@ def run_detection(at_time: datetime | None = None) -> list[dict]:
     db = get_db(DB_PATH)
 
     current  = query_current_window(window_end)
-    baseline = query_baseline(window_end)
+    baseline = cached_baseline if cached_baseline is not None else query_baseline(window_end)
 
     if not current:
         print('[detector] No data in current window — nothing to analyse')
@@ -374,13 +434,21 @@ def run_detection(at_time: datetime | None = None) -> list[dict]:
             'latency'
         )
 
-        rule = match_rule(db, svc, anomaly_type, z_err, z_lat, svc_data['sample_errors'])
+        rule = match_rule(db, svc, anomaly_type, z_err, z_lat, svc_data['sample_errors'], window_end)
         inc_id = record_incident(
             db, window_end, svc,
             svc_data['error_rate'], svc_data['avg_duration'],
             z_err, z_lat, anomaly_type,
             svc_data['sample_errors'], rule,
         )
+
+        diagnosis_text = rule['diagnosis'] if rule else 'No matching rule - manual investigation required'
+        if notify:
+            notify_incident(
+                db, inc_id, svc, anomaly_type, diagnosis_text,
+                rule['id'] if rule else None,
+                z_err, z_lat, svc_data['error_rate'], svc_data['avg_duration'],
+            )
 
         summary = {
             'incident_id':    inc_id,
@@ -409,16 +477,62 @@ def main() -> None:
     ap.add_argument(
         '--at',
         metavar='DATETIME',
-        help='Analyse window ending at this time, e.g. "2026-04-18 14:15:00" '
-             '(default: now)',
+        help='Analyse window ending at this time, e.g. "2026-04-18 14:15:00"',
+    )
+    ap.add_argument(
+        '--replay-hours',
+        type=int,
+        metavar='N',
+        help='Replay detection over the last N hours in 15-min steps (e.g. 168 for 7 days)',
+    )
+    ap.add_argument(
+        '--clear-incidents',
+        action='store_true',
+        help='Delete all existing incidents before replaying',
     )
     args = ap.parse_args()
 
-    at_time = None
-    if args.at:
-        at_time = datetime.strptime(args.at, '%Y-%m-%d %H:%M:%S')
+    if args.replay_hours:
+        # Sweep backwards through history, caching baseline per hour-of-day so we
+        # only fire 24 expensive OZ baseline queries instead of one per window.
+        now   = datetime.now()
+        step  = timedelta(minutes=15)
+        start = now - timedelta(hours=args.replay_hours)
 
-    run_detection(at_time)
+        baseline_cache: dict[int, dict] = {}
+        windows: list[datetime] = []
+        t = start + step
+        while t <= now:
+            windows.append(t)
+            t += step
+
+        if args.clear_incidents:
+            Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
+            init_db(DB_PATH)
+            _db = get_db(DB_PATH)
+            _db.execute('DELETE FROM incidents')
+            _db.commit()
+            _db.close()
+            print('[replay] Cleared existing incidents.')
+
+        print(f'[replay] {len(windows)} windows over {args.replay_hours}h — '
+              f'pre-fetching baseline (single pass)...')
+        shared_baseline = query_baseline(now)
+        print(f'  baseline: {len(shared_baseline)} services with sufficient history')
+
+        total_incidents = 0
+        Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
+        init_db(DB_PATH)
+        for w in windows:
+            found = run_detection(at_time=w, cached_baseline=shared_baseline, notify=False)
+            total_incidents += len(found)
+
+        print(f'\n[replay] Complete — {total_incidents} incident(s) recorded across {len(windows)} windows')
+    else:
+        at_time = None
+        if args.at:
+            at_time = datetime.strptime(args.at, '%Y-%m-%d %H:%M:%S')
+        run_detection(at_time)
 
 
 if __name__ == '__main__':

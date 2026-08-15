@@ -10,15 +10,10 @@ services:
     volumes:
       - openobserve_data:/data
     ports:
-      - "5080:5080"
+      - "5200:5080"
     networks:
       - log_net
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:5080/healthz"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   dashboard:
     image: python:3.12-slim
@@ -31,19 +26,13 @@ services:
     networks:
       - log_net
     depends_on:
-      openobserve:
-        condition: service_healthy
+      - openobserve
     environment:
       OPENOBSERVE_URL: http://openobserve:5080
       OPENOBSERVE_USER: admin@velaris.local
       OPENOBSERVE_PASS: Admin1234!
       DB_PATH: /app/db/incidents.db
-    command: >
-      sh -c "pip install --quiet streamlit plotly pandas requests &&
-             streamlit run dashboard/app.py
-             --server.port=8501
-             --server.address=0.0.0.0
-             --server.headless=true"
+    command: sh -c "pip install --quiet fastapi uvicorn[standard] requests python-dotenv && uvicorn dashboard.api:app --host 0.0.0.0 --port 8501"
     restart: unless-stopped
 
 networks:

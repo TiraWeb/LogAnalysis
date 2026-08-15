@@ -1,0 +1,36 @@
+All 4 pages live in one single file: dashboard/static/index.html
+
+Written in React (via CDN, no build step) with Babel transpiling JSX in the browser
+Pages inside it: Overview, Incidents, Rules, Alert Channels — all React components, route-switched by a route state variable
+Charts use Chart.js (also CDN)
+The vendor JS files (React, ReactDOM, Babel, Chart.js) sit in dashboard/static/vendor/
+Backend serving the dashboard: dashboard/api.py
+
+FastAPI (Python) — serves the HTML file, all /api/* endpoints, and static files
+
+Detection Engine
+File	What it does
+engine/detector.py	The Z-score anomaly detection engine — queries OpenObserve, computes baselines, writes incidents to DB
+engine/models.py	SQLite schema (incidents, diagnosis_rules, alert_channels, metrics) + default rule seeds
+
+Log & Metric Data
+File/Folder	What it is
+data/raw/	Raw real log exports — 4× logs-insights-results*.json from AWS CloudWatch Logs Insights (the actual DEV log data), gitignored
+metrics/fetch_metrics.py	Fetches real CloudWatch metrics (CPU, memory, SQS depth etc.)
+db/incidents.db	SQLite database — stores detected incidents, rules, alert channels
+
+Ingestion Pipeline
+File	What it does
+ingestion/ingest.py	Pushes log data into OpenObserve
+ingestion/fetch_and_ingest.py	Fetches from CloudWatch + pipes straight to OpenObserve
+
+Evaluation / Dev Tools
+File	What it does
+evaluation/replay.py	Runs the detector across historical time windows (how the 35 incidents were found)
+evaluation/export_results.py	Exports incident results to CSV/summary + optional comparison chart PNG (needs matplotlib)
+
+Config
+File	What it is
+.env	Secrets — OpenObserve URL, credentials, DB path
+docker-compose.yml	Spins up OpenObserve + the dashboard server
+requirements.txt	Python dependencies
